@@ -1,0 +1,163 @@
+:root {
+  --primary: #00bfff;
+  --bg: #ffffff;
+  --text: #222222;
+  --accent: #f0f4f8;
+  --card-bg: #ffffff;
+  --border: #dddddd;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+/* Header */
+header,
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--accent);
+  border-bottom: 1px solid var(--primary);
+  position: relative;
+}
+
+header .header-content {
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  color: var(--primary);
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Removed theme toggle icons */
+#theme-toggle,
+#icon-sun,
+#icon-moon {
+  display: none;
+}
+
+/* Nav Bar */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  background-color: var(--accent);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid var(--border);
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--primary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section Layout */
+.section {
+  padding: 3rem 10%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  border-bottom: 2px solid var(--primary);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+}
+
+/* Card Styling */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+  font-size: 0.85rem;
+  color: #777;
+  border-top: 1px solid var(--border);
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem;
+  }
+
+  nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+}
